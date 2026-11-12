@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Topología de hardening CIS en PNET</title>
+  <desc id="desc">FortiGate, switch Cisco y Router Ubuntu conectados a la LAN 192.168.45.0/24.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="1" stop-color="#13243a"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1c3550"/><stop offset="1" stop-color="#14283d"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#56c2d6"/></marker>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#f5f8fc}.subtitle{font:16px Arial,sans-serif;fill:#b8c8d8}
+      .box{fill:url(#card);stroke:#56c2d6;stroke-width:2;rx:18}.device{font:700 22px Arial,sans-serif;fill:#fff}.meta{font:16px Arial,sans-serif;fill:#d1deea}
+      .tag{font:700 14px Arial,sans-serif;fill:#06141b}.line{stroke:#56c2d6;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .label{font:15px Arial,sans-serif;fill:#d6edf2}.lan{fill:#102a39;stroke:#4dd0a4;stroke-width:2;stroke-dasharray:8 6;rx:24}
+      .small{font:14px Arial,sans-serif;fill:#93a9bd}
+    </style>
+  </defs>
+  <rect width="1200" height="650" fill="url(#bg)"/>
+  <text x="60" y="65" class="title">Laboratorio de Hardening CIS</text>
+  <text x="60" y="96" class="subtitle">Topología existente en PNET · direccionamiento derivado de matrícula 20221745</text>
+  <rect x="80" y="155" width="1040" height="335" class="lan"/>
+  <text x="600" y="190" text-anchor="middle" class="device" style="font-size:20px;fill:#8ce5c9">LAN 192.168.45.0/24</text>
+  <rect x="120" y="245" width="270" height="170" class="box"/>
+  <text x="255" y="292" text-anchor="middle" class="device">FortiGate</text>
+  <text x="255" y="326" text-anchor="middle" class="meta">FortiOS 7.0.9</text>
+  <text x="255" y="356" text-anchor="middle" class="meta">port1 · 192.168.45.3/24</text>
+  <rect x="465" y="245" width="270" height="170" class="box"/>
+  <text x="600" y="292" text-anchor="middle" class="device">Switch SW1</text>
+  <text x="600" y="326" text-anchor="middle" class="meta">Cisco IOSvL2 15.2</text>
+  <text x="600" y="356" text-anchor="middle" class="meta">VLAN 1 · 192.168.45.2/24</text>
+  <rect x="810" y="245" width="270" height="170" class="box"/>
+  <text x="945" y="292" text-anchor="middle" class="device">Router</text>
+  <text x="945" y="326" text-anchor="middle" class="meta">Ubuntu 20.04 · Docker</text>
+  <text x="945" y="356" text-anchor="middle" class="meta">eth1 · 192.168.45.1/24</text>
+  <path d="M390 330 H455" class="line"/><text x="422" y="310" text-anchor="middle" class="label">port1 ↔ Gi0/0</text>
+  <path d="M735 330 H800" class="line"/><text x="767" y="310" text-anchor="middle" class="label">Gi0/1 ↔ eth1</text>
+  <rect x="170" y="535" width="860" height="60" rx="14" fill="#162b40" stroke="#536c84"/>
+  <text x="600" y="572" text-anchor="middle" class="meta">Gestión local PNET: consola Cisco :30001 · consola FortiGate :30003 · Docker Router</text>
+  <text x="60" y="625" class="small">Direcciones: 192.168.45.1 Router · 192.168.45.2 Switch · 192.168.45.3 FortiGate</text>
+</svg>

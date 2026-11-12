@@ -1,0 +1,19 @@
+! Estado efectivo del Router al 2026-11-12. La clave/hash del usuario root no se incluye.
+! Plataforma: Ubuntu 20.04 LTS dentro del contenedor Docker docker2.
+
+! Direccionamiento y rutas observadas
+lo      127.0.0.1/8
+eth0    10.177.0.2/16
+eth1    192.168.45.1/24
+route   10.177.0.0/16 dev eth0
+route   192.168.45.0/24 dev eth1
+
+! Valores efectivos de sshd -T posteriores al hardening
+PermitRootLogin no
+PermitEmptyPasswords no
+X11Forwarding no
+MaxAuthTries 4
+LoginGraceTime 30
+
+! Verificación ejecutada: /usr/sbin/sshd -t (sin errores)
+! Listener de consola TCP/23 servido por xinetd se conserva para PNET.
