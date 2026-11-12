@@ -52,6 +52,8 @@ def read_until_any(tn, options, timeout=8):
 
 def cli_connect(port, username, password, enable_password=None):
     tn = telnetlib.Telnet(PNET_CONSOLE_HOST, port, timeout=10)
+    # PNET's console server may not emit the current prompt until Enter is sent.
+    tn.write(b"\r\n")
     data, marker = read_until_any(tn, [b"login:", b"username:", b"password:", b"#", b">"], 4)
     if marker in (b"login:", b"username:"):
         tn.write(username.encode("ascii") + b"\r\n")
@@ -72,11 +74,28 @@ def cli_connect(port, username, password, enable_password=None):
 
 
 def cli_command(tn, command, timeout=20):
+    # Drain bytes left after the previous prompt. In PNET, the echoed prompt
+    # precedes the command; matching the first '#' would return too early.
+    try:
+        tn.read_very_eager()
+    except EOFError:
+        pass
     tn.write(command.encode("utf-8") + b"\r\n")
-    data, marker = read_until_any(tn, [b"#"], timeout)
-    if marker is None:
-        raise RuntimeError("Tiempo agotado ejecutando comando de consola")
-    return data.decode("utf-8", "replace")
+    end = time.time() + timeout
+    data = b""
+    prompt = re.compile(rb"(?m)^[^\r\n]*(?:#|>)\s*$")
+    while time.time() < end:
+        chunk = tn.read_very_eager()
+        if chunk:
+            data += chunk
+            if b"--More--" in data:
+                tn.write(b" ")
+                data = data.replace(b"--More--", b"")
+            if prompt.search(data.rstrip()):
+                return data.decode("utf-8", "replace")
+        else:
+            time.sleep(0.05)
+    raise RuntimeError("Tiempo agotado esperando prompt al ejecutar comando CLI")
 
 
 def switch_config(username, password, apply):
@@ -208,7 +227,11 @@ def audit(switch, forti, router):
     for control, pattern in checks:
         # allowaccess predicate must be evaluated on its own matching line.
         if "GUI/SSH" in control:
-            line = re.search(r"(?m)^\s*set allowaccess ([^\r\n]+)", forti, re.I)
+            interface = re.search(
+                r"(?ims)^\s*edit\s+['\"]?port1['\"]?\s*(.*?)(?=^\s*(?:next|end)\b)",
+                forti)
+            target = interface.group(1) if interface else forti
+            line = re.search(r"(?m)^\s*set allowaccess ([^\r\n]+)", target, re.I)
             tokens = line.group(1).lower().split() if line else []
             passed = bool(line) and "http" not in tokens and "telnet" not in tokens
         else:
@@ -254,7 +277,9 @@ def main():
         router = load("router-running-config-sanitized.txt")
         mode = "snapshot"
     else:
-        password = getpass.getpass("Clave CLI para Switch/FortiGate: ")
+        password = os.environ.get("CIS_CLI_PASSWORD")
+        if password is None:
+            password = getpass.getpass("Clave CLI para Switch/FortiGate: ")
         switch = switch_config(args.user, password, args.apply)
         forti = forti_config(args.user, password, args.apply)
         router = router_config(args.apply)

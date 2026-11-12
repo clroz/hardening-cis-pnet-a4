@@ -1,6 +1,6 @@
-# Asignación 4 — Hardening CIS en PNET
-
 **Video demostrativo:** pendiente de grabación y publicación en YouTube. Este repositorio corresponde a la topología de esta asignación.
+
+# Asignación 4 — Hardening CIS en PNET
 
 **Autor:** Starlin Campusano · **Matrícula:** 20221745
 
@@ -42,8 +42,9 @@ Ejecutarlo como `root` desde la VM PNET para consultar los nodos. Solicita la cl
 - [`docs/controles-cis.md`](docs/controles-cis.md): propósito, controles, justificación y pruebas.
 - [`docs/ejecucion.md`](docs/ejecucion.md): ejecución del escáner y modos de uso.
 - [`docs/guion-video.md`](docs/guion-video.md): recorrido sugerido para la demostración.
-- [`configs/`](configs/): extractos de configuración saneados, sin credenciales ni hashes.
+- [`configs/`](configs/): running-configs saneados del FortiGate, Cisco IOSvL2 y Router, sin credenciales ni hashes.
 - [`scripts/cis_hardening.py`](scripts/cis_hardening.py): auditoría y remediación idempotente seleccionada.
+- [`reports/`](reports/): informes en vivo de solo lectura y posteriores a la aplicación.
 
 ## Alcance
 

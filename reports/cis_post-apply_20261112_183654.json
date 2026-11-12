@@ -1,0 +1,159 @@
+{
+  "mode": "post-apply",
+  "results": [
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: source routing desactivado",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: BOOTP server desactivado",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: HTTP desactivado",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: HTTPS administrativo desactivado",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: VTY sin transporte remoto",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: timeout de consola/VTY",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: BPDU Guard habilitado",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: puertos no usados apagados",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show running-config",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: PortFast en puertos conectados",
+      "status": "PASS",
+      "evidence": "Entradas PortFast: 2 (se requieren Gi0/0 y Gi0/1)",
+      "note": ""
+    },
+    {
+      "device": "Switch Cisco IOSvL2",
+      "control": "IOS: cuenta admin y enable secret existen",
+      "status": "PASS",
+      "evidence": "Se valida existencia; el hash permanece fuera del informe",
+      "note": ""
+    },
+    {
+      "device": "FortiGate 7.0.9",
+      "control": "FortiGate: timeout admin <= 5 min",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show configuration",
+      "note": ""
+    },
+    {
+      "device": "FortiGate 7.0.9",
+      "control": "FortiGate: TLS 1.2 en GUI",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show configuration",
+      "note": ""
+    },
+    {
+      "device": "FortiGate 7.0.9",
+      "control": "FortiGate: umbral de bloqueo 3",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show configuration",
+      "note": ""
+    },
+    {
+      "device": "FortiGate 7.0.9",
+      "control": "FortiGate: bloqueo por 60 s",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show configuration",
+      "note": ""
+    },
+    {
+      "device": "FortiGate 7.0.9",
+      "control": "FortiGate: host admin limitado a LAN /24",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show configuration",
+      "note": ""
+    },
+    {
+      "device": "FortiGate 7.0.9",
+      "control": "FortiGate: GUI/SSH solo en port1, sin HTTP/Telnet",
+      "status": "PASS",
+      "evidence": "Regla evaluada en show configuration",
+      "note": ""
+    },
+    {
+      "device": "Router Ubuntu 20.04 (Docker)",
+      "control": "Ubuntu: SSH root deshabilitado",
+      "status": "PASS",
+      "evidence": "permitrootlogin=no",
+      "note": ""
+    },
+    {
+      "device": "Router Ubuntu 20.04 (Docker)",
+      "control": "Ubuntu: contrase\u00f1as vac\u00edas rechazadas",
+      "status": "PASS",
+      "evidence": "permitemptypasswords=no",
+      "note": ""
+    },
+    {
+      "device": "Router Ubuntu 20.04 (Docker)",
+      "control": "Ubuntu: reenv\u00edo X11 deshabilitado",
+      "status": "PASS",
+      "evidence": "x11forwarding=no",
+      "note": ""
+    },
+    {
+      "device": "Router Ubuntu 20.04 (Docker)",
+      "control": "Ubuntu: m\u00e1ximo cuatro intentos SSH",
+      "status": "PASS",
+      "evidence": "maxauthtries=4",
+      "note": ""
+    },
+    {
+      "device": "Router Ubuntu 20.04 (Docker)",
+      "control": "Ubuntu: ventana de login SSH de 30 s",
+      "status": "PASS",
+      "evidence": "logingracetime=30",
+      "note": ""
+    },
+    {
+      "device": "Router Ubuntu 20.04 (Docker)",
+      "control": "Excepci\u00f3n de consola PNET en TCP/23",
+      "status": "PASS",
+      "evidence": "xinetd escucha en TCP/23; se conserva para la consola del nodo PNET",
+      "note": "No usar Telnet como acceso administrativo de producci\u00f3n."
+    }
+  ]
+}

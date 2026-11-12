@@ -5,6 +5,7 @@
 - Ejecutar dentro de la VM PNET, como `root`; el script usa las consolas locales TCP 30001 y 30003 y el endpoint Docker local `tcp://127.0.0.1:4243`.
 - Python 3.6 o posterior y los nodos existentes encendidos.
 - La cuenta `admin` del switch y FortiGate debe tener permiso de configuración. La contraseña se solicita con entrada oculta y no se escribe a disco.
+- Para una ejecución no interactiva, el operador puede definir `CIS_CLI_PASSWORD` únicamente en el entorno del proceso y eliminarla al terminar. No debe guardarse en el repositorio ni en archivos de inicio del shell.
 
 ## Modo informe
 

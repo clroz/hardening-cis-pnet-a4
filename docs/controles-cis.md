@@ -7,8 +7,8 @@ Endurecer y comprobar la administración de la red existente en PNET. El laborat
 ## Referencias CIS
 
 - [CIS Fortinet Benchmarks](https://www.cisecurity.org/benchmark/fortinet) — referencia del FortiGate 7.0.x Benchmark v1.4.0.
-- [CIS Cisco Benchmarks](https://www.cisecurity.org/benchmark/cisco) — recomendaciones de configuración segura de Cisco IOS; el switch del laboratorio reporta IOSvL2 15.2.
-- [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks) — marco de configuración segura para sistemas Linux.
+- [CIS Cisco IOS Benchmark v2.2 (PDF oficial archivado)](https://www.cisecurity.org/-/jssmedia/Project/cisecurity/cisecurity/data/media/files/uploads/2017/04/CIS_Cisco_IOS_Benchmark_v22.pdf) — referencia histórica compatible con el IOSvL2 15.2 del switch. La [página actual de CIS Cisco](https://www.cisecurity.org/benchmark/cisco) enumera las ediciones vigentes.
+- [CIS Ubuntu Linux Benchmarks](https://www.cisecurity.org/benchmark/ubuntu_linux) — incluye Ubuntu Linux 20.04 LTS Benchmark v3.0.0, aplicable a la base del Router.
 - [Referencia oficial FortiOS 7.0.9: `config system global`](https://docs.fortinet.com/document/fortigate/7.0.9/cli-reference/1620) — versiones TLS disponibles para el HTTPS administrativo.
 
 El script comprueba una selección documentada de controles aplicables, no todos los puntos de los Benchmarks. Se evita atribuir números de recomendación que dependen de la edición exacta del PDF.
