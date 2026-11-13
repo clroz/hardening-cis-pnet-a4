@@ -3,5 +3,4 @@ Matrícula: 20221745
 Asignación: A4 — Hardening CIS en PNET
 
 Repositorio GitHub público: https://github.com/clroz/hardening-cis-pnet-a4
-Video de YouTube: https://www.youtube.com/watch?v=5LQaleYgNZQ
 
