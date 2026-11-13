@@ -18,10 +18,10 @@ Solo lee configuración y genera `reports/cis_report-only_<fecha>.md` y `.json`.
 ## Aplicar y generar informe posterior
 
 ```bash
-python3 scripts/cis_hardening.py --apply
+python3 scripts/cis_hardening.py -a
 ```
 
-El modo aplica los controles definidos en el script a switch, FortiGate y SSH del Router, vuelve a consultar los valores efectivos y genera `cis_post-apply_<fecha>.md` y `.json`. La remediación es idempotente para las reglas incluidas. Conserva una copia local del `sshd_config` original en el contenedor Router como `/etc/ssh/sshd_config.week9.orig`.
+El modo `-a` (equivalente a `--apply`) aplica los controles definidos en el script a switch, FortiGate y SSH del Router, vuelve a consultar los valores efectivos y genera `cis_post-apply_<fecha>.md` y `.json`. La remediación es idempotente para las reglas incluidas. Conserva una copia local del `sshd_config` original en el contenedor Router como `/etc/ssh/sshd_config.week9.orig`.
 
 ## Analizar archivos saneados
 

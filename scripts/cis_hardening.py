@@ -261,7 +261,7 @@ def audit(switch, forti, router):
 
 def main():
     parser = argparse.ArgumentParser(description="Auditor CIS local para el laboratorio PNET")
-    parser.add_argument("--apply", action="store_true", help="aplica los controles seleccionados y vuelve a auditar")
+    parser.add_argument("-a", "--apply", action="store_true", help="aplica los controles seleccionados y vuelve a auditar")
     parser.add_argument("--user", default="admin", help="usuario CLI de switch y FortiGate (default: admin)")
     parser.add_argument("--report-dir", default="reports", help="directorio de informes")
     parser.add_argument("--snapshot-dir", help="audita archivos saneados guardados; no conecta ni modifica equipos")

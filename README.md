@@ -1,4 +1,4 @@
-**Video demostrativo:** pendiente de grabación y publicación en YouTube. Este repositorio corresponde a la topología de esta asignación.
+**Video demostrativo:** [Ver en YouTube](https://www.youtube.com/watch?v=5LQaleYgNZQ)
 
 # Asignación 4 — Hardening CIS en PNET
 
@@ -31,17 +31,16 @@ El script evalúa los controles escogidos en los tres equipos. Sin argumentos cr
 
 ```bash
 python3 scripts/cis_hardening.py
-python3 scripts/cis_hardening.py --apply
+python3 scripts/cis_hardening.py -a
 python3 scripts/cis_hardening.py --snapshot-dir configs
 ```
 
-Ejecutarlo como `root` desde la VM PNET para consultar los nodos. Solicita la clave CLI de switch/FortiGate de forma interactiva; no la guarda ni la imprime. Informes Markdown y JSON quedan en `reports/`. La opción `--snapshot-dir configs` solo analiza los extractos saneados guardados, sin consultar ni modificar equipos.
+Ejecutarlo como `root` desde la VM PNET para consultar los nodos. Solicita la clave CLI de switch/FortiGate de forma interactiva; no la guarda ni la imprime. Informes Markdown y JSON quedan en `reports/`. La opción `-a` (equivalente a `--apply`) aplica los controles y genera el informe posterior. `--snapshot-dir configs` solo analiza los running-configs saneados, sin consultar ni modificar equipos.
 
 ## Contenido
 
 - [`docs/controles-cis.md`](docs/controles-cis.md): propósito, controles, justificación y pruebas.
 - [`docs/ejecucion.md`](docs/ejecucion.md): ejecución del escáner y modos de uso.
-- [`docs/guion-video.md`](docs/guion-video.md): recorrido sugerido para la demostración.
 - [`configs/`](configs/): running-configs saneados del FortiGate, Cisco IOSvL2 y Router, sin credenciales ni hashes.
 - [`scripts/cis_hardening.py`](scripts/cis_hardening.py): auditoría y remediación idempotente seleccionada.
 - [`reports/`](reports/): informes en vivo de solo lectura y posteriores a la aplicación.

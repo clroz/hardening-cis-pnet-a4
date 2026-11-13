@@ -15,7 +15,7 @@ Fecha de trabajo: 12 de noviembre de 2026 (zona horaria de la VM PNET: UTC).
 | FortiGate running-config | Exportado con `show full-configuration`; valores sensibles saneados | `configs/fortigate-running-config-sanitized.txt` |
 | FortiGate conectividad | ICMP a `192.168.45.1` | Respuestas recibidas |
 | Verificador (solo lectura en vivo) | `python3 scripts/cis_hardening.py` | 22 PASS, 0 FAIL; `reports/cis_report-only_20261112_183615.md` |
-| Verificador (aplicar y revisar) | `python3 scripts/cis_hardening.py --apply` | 22 PASS, 0 FAIL después de aplicar; `reports/cis_post-apply_20261112_183654.md` |
+| Verificador (aplicar y revisar) | `python3 scripts/cis_hardening.py -a` | 22 PASS, 0 FAIL después de aplicar; `reports/cis_post-apply_20261112_183654.md` |
 | Verificador snapshot | `python3 scripts/cis_hardening.py --snapshot-dir configs` | 22 PASS, 0 FAIL con running-configs completos saneados; `reports/cis_snapshot_20261112_184511.md` |
 | Pruebas del analizador | `python3 -m unittest -v` | 3 pruebas aprobadas: valores esperados, detección de valor SSH inseguro y detección de HTTP administrativo |
 
